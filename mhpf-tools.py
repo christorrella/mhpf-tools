@@ -84,7 +84,10 @@ def printUnknownIDsForEachResource():
         # print(str(resource_content_locations[i]) + ", " + resource_dest_strings[i])
         print(str(resource_content_locations[i].get("unknown")) + ": \"" + resource_dest_strings[i] + "\"," )
 
-
+def printTable1():
+    for i in range(0, len(resource_dest_strings)):
+        # print(str(resource_content_locations[i]) + ", " + resource_dest_strings[i])
+        print(str(resource_content_locations[i].get("unknown")) + ", " + str(resource_content_locations[i].get("start")) + ", " + str(resource_content_locations[i].get("size")) + ", \"" + resource_dest_strings[i] + "\"," )
 
 def mkdir(path):
     try:
@@ -372,9 +375,10 @@ def unpackMode():
 
     if scanmode:
         printHeaderInfo()
-        findFirstFile()
-        findChunkSizes()
-        printUnknownIDsForEachResource()
+        #findFirstFile()
+        #findChunkSizes()
+        #printUnknownIDsForEachResource()
+        printTable1()
     else:
         unpack()
     fi.close()
@@ -420,6 +424,8 @@ def main(argv):
     if packOpt:
         packMode()
     elif unpackOpt:
+        unpackMode()
+    elif scanmode:
         unpackMode()
 
 if __name__ == "__main__":
