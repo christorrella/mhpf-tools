@@ -5,7 +5,7 @@ it's messy for now, but it works.
 
 ### usage:
 
-mhpf-tools.py -u/-p/-s (--unpack/--pack/--scan) -i (--input) <input file/dir> -o (--output) <output file/dir>
+>mhpf-tools.py -u/-p/-s (--unpack/--pack/--scan) -i (--input) <input file/dir> -o (--output) <output file/dir>
 
 "unpack" mode takes .pck file as input, creates output directory
 
