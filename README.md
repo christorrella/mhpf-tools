@@ -1,5 +1,5 @@
 # mhpf-tools
-package tools for the "Melbourne House Pack File" file format (.PCK)
+package tools for the "Melbourne House Pack File" file format (.PCK) used for Test Drive Unlimited PSP/PS2 game resource archives
 
 it's messy for now, but it works.
 
