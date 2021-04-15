@@ -1,4 +1,4 @@
-# mhpf-package-tools
+# mhpf-tools
 package tools for the "Melbourne House Pack File" file format (.PCK)
 
 it's messy for now, but it works.
