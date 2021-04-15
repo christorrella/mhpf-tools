@@ -3,7 +3,7 @@ package tools for the "Melbourne House Pack File" file format (.PCK) used for Te
 
 it's messy for now, but it works.
 
-usage:
+### usage:
 
 mhpf-tools.py -u/-p/-s (--unpack/--pack/--scan) -i (--input) <input file/dir> -o (--output) <output file/dir>
 
