@@ -1,6 +1,7 @@
-# Melbourne House Pack File packer/repacker by Chris Torrella
+﻿# Melbourne House Pack File packer/repacker by Chris Torrella
 
-import sys, getopt, os, errno, math, re, struct, json
+import sys, getopt, os, errno, math, re, struct, json, contextlib
+
 
 ############################################################
 # UN-packing functions
@@ -30,8 +31,12 @@ resource_content_locations = []
 resource_dest_lengths = []
 resource_dest_strings = []
 
+
+
 def littleBytesToInt(bytes):
     return int.from_bytes(bytes, "little", signed=False)
+
+
 
 def readHeader(): # reads the first 52 bytes of the file, gives locations of tables
     for key in headerLocations:
@@ -89,12 +94,10 @@ def printTable1():
         # print(str(resource_content_locations[i]) + ", " + resource_dest_strings[i])
         print(str(resource_content_locations[i].get("unknown")) + ", " + str(resource_content_locations[i].get("start")) + ", " + str(resource_content_locations[i].get("size")) + ", \"" + resource_dest_strings[i] + "\"," )
 
+
 def mkdir(path):
-    try:
+ with contextlib.suppress(OSError):
         os.makedirs(path)
-    except OSError as e:
-        if e.errno != errno.EEXIST:
-            raise
 
 def safe_open_w(path):
     ''' Open "path" for writing, creating any parent directories as needed.
